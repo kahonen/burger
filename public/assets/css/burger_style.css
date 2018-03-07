@@ -1,0 +1,33 @@
+body{
+    background:url('../img/background.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    background-size:cover;
+    font-family: 'Limelight', cursive;
+}
+
+.noteaten {
+    float: left;
+    background-color: rgba(235, 205, 141, 0.701);
+    margin-left: 20%;
+    padding: 10px;
+
+}
+
+.eaten {
+    float: right;
+    background-color: rgba(235, 205, 141, 0.701);
+    margin-right: 20%;
+    padding: 10px;
+}
+
+.addburger {
+    background-color: rgba(235, 205, 141, 0.701);
+    padding: 10px;
+}
+
+.jumbotron{
+    background-color: rgba(206, 198, 148, 0.2);
+    font-size: 110px;
+}

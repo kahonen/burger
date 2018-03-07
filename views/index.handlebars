@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="jumbotron">
+    <div class="row justify-content-center" id="rowtext">
+      <h1 class="display-1">BURGERS</h1>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <div class="noteaten">
+        <h2>Burgers to eat!</h2>
+
+        <ul>
+          {{#each burgers}} {{#unless this.devoured}}
+          <li>
+            {{this.id}}. {{this.burger_name}}
+            {{!-- <form action="/api/burgers/{{this.id}}" method="PUT"></form> --}}
+            <form action="/{{this.id}}?_method=PUT" method="POST">
+              <input type="hidden" name="devoured" value="false">
+              <button class="btn btn-success" type="submit">Devour it!!</button>
+            </form>
+
+          </li>
+          {{/unless}} {{/each}}
+        </ul>
+      </div>
+
+    </div>
+    <div class="col-sm" align="center">
+      <div class="addburger">
+        <h2>Add a Burger</h2>
+        {{!-- <form class="create-form" action="/api/burgers" method="POST"> --}}
+        <form class="create-form justify-content-center" action="/" method="POST">
+          <div class="form-group">
+            <input type="text" id="newburger" name="burger_name">
+          </div>
+
+          <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="eaten">
+        <h2>Burgers devoured!</h2>
+
+        <ul>
+          {{#each burgers}} {{#if this.devoured}}
+          <li>
+            {{this.id}}. {{this.burger_name}}
+          </li>
+          {{/if}} {{/each}}
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</div>
